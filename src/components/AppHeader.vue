@@ -1,16 +1,16 @@
 <template>
   <header class="ui secondary pointing menu">
-    <a class="active item">
+    <router-link to="/" class="active item">
       Image Storage
-    </a>
+    </router-link>
     <div class="right menu">
       <div class="horizontal" v-if="isLoggedIn">
-        <a class="ui item">
+        <router-link to="/" class="ui item">
           Gallery
-        </a>
-        <a class="ui item">
+        </router-link>
+        <router-link to="/upload" class="ui item">
           Upload
-        </a>
+        </router-link>
         <a class="ui item" @click="logout">
           Logout
         </a>
