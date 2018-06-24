@@ -21,5 +21,20 @@ export default {
         Authorization: `Bearer ${token}`
       }
     });
+  },
+  uploadImages(images, token) {
+    // Картинки можно грузить только по одной, поэтому мапируем
+    const promises = Array.from(images).map(img => {
+      const formData = new FormData();
+      formData.append('image', img);
+
+      return axios.post(`${ROOT_URL}/3/image`, formData, {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      });
+    });
+
+    return Promise.all(promises);
   }
 };
