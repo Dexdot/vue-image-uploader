@@ -5,9 +5,9 @@
       <div class="image-container">
         <img v-for="img in allImages" :key="img.id" :src="img.link" :alt="img.title">
       </div>
+      </div>
+      <h2 v-else>Please, login to get started!</h2>
     </div>
-    <h2 v-else>Please, login to get started!</h2>
-  </div>
 </template>
 
 <script>
